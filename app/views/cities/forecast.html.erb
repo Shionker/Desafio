@@ -1,0 +1,434 @@
+<section class="vh-100">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100" style="color: #282828;">
+      <div class="col-md-9 col-lg-7 col-xl-5">
+        
+        <div class="card mb-4 gradient-custom" style="border-radius: 25px;">
+          <div class="card-body p-4" sty="lefloat:left">
+            <div id="demo1" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="d-flex justify-content-between mb-4 pb-2">
+                    <div>
+                      <h3 style="color: black" class="mb-0"><%= @forecastcityname%></h3>
+                      <h4 style="color: black" class="display-2"><strong><%= @d0f0%>/<%= @d0f0m%></strong></h4>
+                      <p style="color: black" class="medium"><strong>Min: <%= @parsedvalue0min%>°C</strong></p>
+                      <p style="color: black" class="medium"><strong>Max: <%= @parsedvalue0max%>°C</strong></p>
+                    </div>
+                    <div>
+                      <% if @icon == "sunny"%>
+                        <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/01-s.png" width="250px">
+                      <% elsif @icon == "mostly sunny" %>
+                        <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/02-s.png" width="250px">
+                      <% elsif @icon == "partly sunny" %>
+                        <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/03-s.png" width="250px">
+                      <% elsif @icon == "intermittent clouds" %>
+                        <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/04-s.png" width="250px">
+                      <% elsif @icon == "hazy sunshine" %>
+                        <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/05-s.png" width="250px">
+                      <% elsif @icon == "mostly cloudy" %>
+                        <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/06-s.png" width="250px">
+                      <% elsif @icon == "cloudy" %>
+                        <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/07-s.png" width="250px">
+                      <% elsif @icon == "dreary (overcast)" %>
+                        <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/08-s.png" width="250px">
+                      <% elsif @icon == "fog" %>
+                        <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/11-s.png" width="250px">
+                      <% elsif @icon == "showers" %>
+                        <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/12-s.png" width="250px">
+                      <% elsif @icon == "mostly cloudy w/ showers" %>
+                        <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/13-s.png" width="250px">
+                      <% elsif @icon == "partly sunny w/ showers" %>
+                        <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/14-s.png" width="250px">
+                      <% elsif @icon == "t-storms" %>
+                        <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/15-s.png" width="250px">
+                      <% elsif @icon == "mostly cloudy w/ t-storms" %>
+                        <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/16-s.png" width="250px">
+                      <% elsif @icon == "partly sunny w/ t-storms" %>
+                        <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/17-s.png" width="250px">
+                      <% elsif @icon == "rain" %>
+                        <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/18-s.png" width="250px">
+                      <% elsif @icon == "flurries" %>
+                        <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/19-s.png" width="250px">
+                      <% elsif @icon == "mostly cloudy w/ flurries" %>
+                        <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/20-s.png" width="250px">
+                      <% elsif @icon == "partly sunny w/ flurries" %>
+                        <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/21-s.png" width="250px">
+                      <% elsif @icon == "snow" %>
+                        <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/22-s.png" width="250px">
+                      <% elsif @icon == "mostly cloudy w/ snow" %>
+                        <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/23-s.png" width="250px">
+                      <% elsif @icon == "ice" %>
+                        <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/24-s.png" width="250px">
+                      <% elsif @icon == "sleet" %>
+                        <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/25-s.png" width="250px">
+                      <% elsif @icon == "freezing rain" %>
+                        <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/26-s.png" width="250px">
+                      <% elsif @icon == "rain and snow" %>
+                        <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/29-s.png" width="250px">
+                      <% elsif @icon == "hot" %>
+                        <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/30-s.png" width="250px">
+                      <% elsif @icon == "cold" %>
+                        <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/31-s.png" width="250px">
+                      <% elsif @icon == "windy" %>
+                        <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/32-s.png" width="250px">
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="card mb-4 gradient-custom2" style="border-radius: 25px;">
+          <div class="card-body p-4">
+            <div id="demo3" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="d-flex justify-content-around text-center mb-4 pb-3 pt-2">
+                    <div class="flex-column">
+                      <p style="color: black" class="mb-4"><strong><%= @d1f1%>/<%= @d1f1m%></strong></p>                 
+                      <div>
+                        <% if @icon1 == "sunny"%>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/01-s.png" width="100px">
+                        <% elsif @icon1 == "mostly sunny" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/02-s.png" width="100px">
+                        <% elsif @icon1 == "partly sunny" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/03-s.png" width="100px">
+                        <% elsif @icon1 == "intermittent clouds" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/04-s.png" width="100px">
+                        <% elsif @icon1 == "hazy sunshine" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/05-s.png" width="100px">
+                        <% elsif @icon1 == "mostly cloudy" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/06-s.png" width="100px">
+                        <% elsif @icon1 == "cloudy" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/07-s.png" width="100px">
+                        <% elsif @icon1 == "dreary (overcast)" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/08-s.png" width="100px">
+                        <% elsif @icon1 == "fog" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/11-s.png" width="100px">
+                        <% elsif @icon1 == "showers" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/12-s.png" width="100px">
+                        <% elsif @icon1 == "mostly cloudy w/ showers" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/13-s.png" width="100px">
+                        <% elsif @icon1 == "partly sunny w/ showers" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/14-s.png" width="100px">
+                        <% elsif @icon1 == "t-storms" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/15-s.png" width="100px">
+                        <% elsif @icon1 == "mostly cloudy w/ t-storms" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/16-s.png" width="100px">
+                        <% elsif @icon1 == "partly sunny w/ t-storms" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/17-s.png" width="100px">
+                        <% elsif @icon1 == "rain" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/18-s.png" width="100px">
+                        <% elsif @icon1 == "flurries" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/19-s.png" width="100px">
+                        <% elsif @icon1 == "mostly cloudy w/ flurries" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/20-s.png" width="100px">
+                        <% elsif @icon1 == "partly sunny w/ flurries" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/21-s.png" width="100px">
+                        <% elsif @icon1 == "snow" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/22-s.png" width="100px">
+                        <% elsif @icon1 == "mostly cloudy w/ snow" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/23-s.png" width="100px">
+                        <% elsif @icon1 == "ice" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/24-s.png" width="100px">
+                        <% elsif @icon1 == "sleet" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/25-s.png" width="100px">
+                        <% elsif @icon1 == "freezing rain" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/26-s.png" width="100px">
+                        <% elsif @icon1 == "rain and snow" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/29-s.png" width="100px">
+                        <% elsif @icon1 == "hot" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/30-s.png" width="100px">
+                        <% elsif @icon1 == "cold" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/31-s.png" width="100px">
+                        <% elsif @icon1 == "windy" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/32-s.png" width="100px">
+                        <% end %>
+                      </div>
+                      <p style="color: black" class="mb-0"><strong>Min: <%= @parsedvalue1min%></strong></p>
+                      <p style="color: black" class="mb-0"><strong>Max: <%= @parsedvalue1max%></strong></p>  
+                    </div>
+                    <div class="flex-column">
+                      <p style="color: black" class="mb-4"><strong><%= @d2f2%>/<%= @d2f2m%></strong></p>
+                      <div>
+                        <% if @icon2 == "sunny"%>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/01-s.png" width="100px">
+                        <% elsif @icon2 == "mostly sunny" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/02-s.png" width="100px">
+                        <% elsif @icon2 == "partly sunny" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/03-s.png" width="100px">
+                        <% elsif @icon2 == "intermittent clouds" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/04-s.png" width="100px">
+                        <% elsif @icon2 == "hazy sunshine" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/05-s.png" width="100px">
+                        <% elsif @icon2 == "mostly cloudy" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/06-s.png" width="100px">
+                        <% elsif @icon2 == "cloudy" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/07-s.png" width="100px">
+                        <% elsif @icon2 == "dreary (overcast)" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/08-s.png" width="100px">
+                        <% elsif @icon2 == "fog" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/11-s.png" width="100px">
+                        <% elsif @icon2 == "showers" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/12-s.png" width="100px">
+                        <% elsif @icon2 == "mostly cloudy w/ showers" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/13-s.png" width="100px">
+                        <% elsif @icon2 == "partly sunny w/ showers" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/14-s.png" width="100px">
+                        <% elsif @icon2 == "t-storms" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/15-s.png" width="100px">
+                        <% elsif @icon2 == "mostly cloudy w/ t-storms" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/16-s.png" width="100px">
+                        <% elsif @icon2 == "partly sunny w/ t-storms" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/17-s.png" width="100px">
+                        <% elsif @icon2 == "rain" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/18-s.png" width="100px">
+                        <% elsif @icon2 == "flurries" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/19-s.png" width="100px">
+                        <% elsif @icon2 == "mostly cloudy w/ flurries" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/20-s.png" width="100px">
+                        <% elsif @icon2 == "partly sunny w/ flurries" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/21-s.png" width="100px">
+                        <% elsif @icon2 == "snow" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/22-s.png" width="100px">
+                        <% elsif @icon2 == "mostly cloudy w/ snow" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/23-s.png" width="100px">
+                        <% elsif @icon2 == "ice" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/24-s.png" width="100px">
+                        <% elsif @icon2 == "sleet" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/25-s.png" width="100px">
+                        <% elsif @icon2 == "freezing rain" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/26-s.png" width="100px">
+                        <% elsif @icon2 == "rain and snow" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/29-s.png" width="100px">
+                        <% elsif @icon2 == "hot" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/30-s.png" width="100px">
+                        <% elsif @icon2 == "cold" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/31-s.png" width="100px">
+                        <% elsif @icon2 == "windy" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/32-s.png" width="100px">
+                        <% end %>
+                      </div>
+                      <p style="color: black" class="mb-0"><strong>Min: <%= @parsedvalue2min%></strong></p>
+                      <p style="color: black" class="mb-0"><strong>Max: <%= @parsedvalue2max%></strong></p> 
+                    </div>
+                    <div class="flex-column">
+                      <p style="color: black" class="mb-4"><strong><%= @d3f3%>/<%= @d3f3m%></strong></p>
+                      <div>
+                        <% if @icon3 == "sunny"%>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/01-s.png" width="100px">
+                        <% elsif @icon3 == "mostly sunny" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/02-s.png" width="100px">
+                        <% elsif @icon3 == "partly sunny" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/03-s.png" width="100px">
+                        <% elsif @icon3 == "intermittent clouds" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/04-s.png" width="100px">
+                        <% elsif @icon3 == "hazy sunshine" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/05-s.png" width="100px">
+                        <% elsif @icon3 == "mostly cloudy" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/06-s.png" width="100px">
+                        <% elsif @icon3 == "cloudy" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/07-s.png" width="100px">
+                        <% elsif @icon3 == "dreary (overcast)" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/08-s.png" width="100px">
+                        <% elsif @icon3 == "fog" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/11-s.png" width="100px">
+                        <% elsif @icon3 == "showers" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/12-s.png" width="100px">
+                        <% elsif @icon3 == "mostly cloudy w/ showers" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/13-s.png" width="100px">
+                        <% elsif @icon3 == "partly sunny w/ showers" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/14-s.png" width="100px">
+                        <% elsif @icon3 == "t-storms" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/15-s.png" width="100px">
+                        <% elsif @icon3 == "mostly cloudy w/ t-storms" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/16-s.png" width="100px">
+                        <% elsif @icon3 == "partly sunny w/ t-storms" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/17-s.png" width="100px">
+                        <% elsif @icon3 == "rain" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/18-s.png" width="100px">
+                        <% elsif @icon3 == "flurries" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/19-s.png" width="100px">
+                        <% elsif @icon3 == "mostly cloudy w/ flurries" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/20-s.png" width="100px">
+                        <% elsif @icon3 == "partly sunny w/ flurries" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/21-s.png" width="100px">
+                        <% elsif @icon3 == "snow" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/22-s.png" width="100px">
+                        <% elsif @icon3 == "mostly cloudy w/ snow" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/23-s.png" width="100px">
+                        <% elsif @icon3 == "ice" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/24-s.png" width="100px">
+                        <% elsif @icon3 == "sleet" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/25-s.png" width="100px">
+                        <% elsif @icon3 == "freezing rain" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/26-s.png" width="100px">
+                        <% elsif @icon3 == "rain and snow" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/29-s.png" width="100px">
+                        <% elsif @icon3 == "hot" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/30-s.png" width="100px">
+                        <% elsif @icon3 == "cold" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/31-s.png" width="100px">
+                        <% elsif @icon3 == "windy" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/32-s.png" width="100px">
+                        <% end %>
+                      </div>
+                      <p style="color: black" class="mb-0"><strong>Min: <%= @parsedvalue3min%></strong></p>
+                      <p style="color: black" class="mb-0"><strong>Max: <%= @parsedvalue3max%></strong></p>
+                    </div>
+                    <div class="flex-column">
+                      <p style="color: black" class="mb-4"><strong><%= @d4f4%>/<%= @d4f4m%></strong></p>
+                      <div>
+                        <% if @icon4 == "sunny"%>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/01-s.png" width="100px">
+                        <% elsif @icon4 == "mostly sunny" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/02-s.png" width="100px">
+                        <% elsif @icon4 == "partly sunny" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/03-s.png" width="100px">
+                        <% elsif @icon4 == "intermittent clouds" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/04-s.png" width="100px">
+                        <% elsif @icon4 == "hazy sunshine" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/05-s.png" width="100px">
+                        <% elsif @icon4 == "mostly cloudy" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/06-s.png" width="100px">
+                        <% elsif @icon4 == "cloudy" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/07-s.png" width="100px">
+                        <% elsif @icon4 == "dreary (overcast)" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/08-s.png" width="100px">
+                        <% elsif @icon4 == "fog" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/11-s.png" width="100px">
+                        <% elsif @icon4 == "showers" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/12-s.png" width="100px">
+                        <% elsif @icon4 == "mostly cloudy w/ showers" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/13-s.png" width="100px">
+                        <% elsif @icon4 == "partly sunny w/ showers" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/14-s.png" width="100px">
+                        <% elsif @icon4 == "t-storms" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/15-s.png" width="100px">
+                        <% elsif @icon4 == "mostly cloudy w/ t-storms" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/16-s.png" width="100px">
+                        <% elsif @icon4 == "partly sunny w/ t-storms" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/17-s.png" width="100px">
+                        <% elsif @icon4 == "rain" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/18-s.png" width="100px">
+                        <% elsif @icon4 == "flurries" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/19-s.png" width="100px">
+                        <% elsif @icon4 == "mostly cloudy w/ flurries" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/20-s.png" width="100px">
+                        <% elsif @icon4 == "partly sunny w/ flurries" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/21-s.png" width="100px">
+                        <% elsif @icon4 == "snow" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/22-s.png" width="100px">
+                        <% elsif @icon4 == "mostly cloudy w/ snow" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/23-s.png" width="100px">
+                        <% elsif @icon4 == "ice" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/24-s.png" width="100px">
+                        <% elsif @icon4 == "sleet" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/25-s.png" width="100px">
+                        <% elsif @icon4 == "freezing rain" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/26-s.png" width="100px">
+                        <% elsif @icon4 == "rain and snow" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/29-s.png" width="100px">
+                        <% elsif @icon4 == "hot" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/30-s.png" width="100px">
+                        <% elsif @icon4 == "cold" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/31-s.png" width="100px">
+                        <% elsif @icon4 == "windy" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/32-s.png" width="100px">
+                        <% end %>
+                      </div>
+                      <p style="color: black" class="mb-0"><strong>Min: <%= @parsedvalue4min%></strong></p>
+                      <p style="color: black" class="mb-0"><strong>Max: <%= @parsedvalue4max%></strong></p> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-4 gradient-custom" style="border-radius: 25px;">
+          <div class="card-body p-4">
+            <div id="demo1" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="d-flex justify-content-between mb-4 pb-2">
+                    <div>
+                      <h4 style="color: black" ><strong>
+                      <h3 style="color: black" >Velocidad del viento</h3>
+                      <p style="color: black" class="display-2"><strong><%= @windspeedkmrounded%> Km/hr</strong></p>
+                    </div>
+                    <div style=" float:right">
+                      <% if @windspeedkmrounded%>
+                        <img src="https://cdn-icons-png.flaticon.com/512/2204/2204344.png" width="150px">
+                      <% end %>                   
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mb-4 gradient-custom" style="border-radius: 25px;">
+          <div class="card-body p-4">
+            <div id="demo1" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="d-flex justify-content-between mb-4 pb-2">
+                    <div>
+                      <h3 style="color: black">Direccion del viento</h3>
+                      <p style="color: black" class="display-2"><strong><%= @winddeg%>°</strong></p>
+                    </div>
+                    <div style=" float:right">
+                      <% if 0 < @winddeg && @winddeg < 90%>
+                        <img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/452/external-northeast-weather-dreamstale-lineal-dreamstale.png" width="150px">
+                      <% elsif @winddeg == 90%>
+                        <img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/344/external-compass-weather-dreamstale-lineal-dreamstale-6.png" width="150px">
+                      <% elsif 90 < @winddeg && @winddeg < 180%>
+                        <img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/452/external-southeast-weather-dreamstale-lineal-dreamstale.png" width="150px">
+                      <% elsif @winddeg == 180%>
+                        <img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/452/external-south-weather-dreamstale-lineal-dreamstale.png" width="150px">
+                      <% elsif 180 < @winddeg && @winddeg < 270%>
+                        <img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/452/external-southwest-weather-dreamstale-lineal-dreamstale.png" width="150px">
+                      <% elsif @winddeg == 270%>
+                        <img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/452/external-west-weather-dreamstale-lineal-dreamstale.png" width="150px">
+                      <% elsif 270 < @winddeg && @winddeg < 360%>
+                        <img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/344/external-northwest-weather-dreamstale-lineal-dreamstale.png" width="150px">
+                      <% elsif @winddeg == 360 || @winddeg == 0%>
+                        <img src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/452/external-north-weather-dreamstale-lineal-dreamstale.png" width="150px">
+                      <% end %>                   
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mb-4 gradient-custom" style="border-radius: 25px;">
+          <div class="card-body p-4">
+            <div id="demo1" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div>
+                    <p class="small" style="color: black"> Temperatura maxima</p>
+                    <%= column_chart( Dia1: @parsedvalue0max,
+                                      Dia2: @parsedvalue1max,
+                                      Dia3: @parsedvalue2max,
+                                      Dia4: @parsedvalue3max,
+                                      Dia5: @parsedvalue4max)%>               
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

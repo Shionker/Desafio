@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="card-header card text-center" >
+    <h1>Lista de ciudades agregadas</h1>
+  </div>
+  
+  <ul class="list-group" style="text-align: center">
+    <% @cities.each do |city| %>
+        <li class="list-group-item">
+          <a href="/cities/<%= city.id %>">
+            <button type="button" class="btn btn-outline-success" style="width: 200px">
+              <%= city.name %> de <%= city.country %>
+            </button>
+          </a>
+        </li>
+    <% end %>
+  </ul>
+</div>

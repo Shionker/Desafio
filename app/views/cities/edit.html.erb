@@ -1,0 +1,45 @@
+<div class="container">
+    <ul class="list-group" style="text-align: left">
+        <div class="card-header card text-center" >
+            <h1>Editar Ciudad<%= @citynameedit%></h1>
+        </div>
+
+        <li class="list-group-item">
+            <!--Se genera un formulario para la edicion-->
+            <%= form_with model: @city do |form| %>
+                <div class="container"> 
+                    <p style="color: dark">Nombre de la ciudad (sin tildes ni guion): </p>
+                    <%= form.text_field :name %>
+                    <% @city.errors.full_messages_for(:name).each do |message| %>
+                        <div><%= message %></div>
+                    <% end %>
+                </div>
+
+                <br>
+                <div class="container">
+                    <p style="color: dark">Pais de origen (sin tildes ni guion): </p>
+                    <%= form.text_field :country %>
+                    <% @city.errors.full_messages_for(:country).each do |message| %>
+                        <div><%= message %></div>
+                    <% end %>
+                </div>
+
+                <br>
+                <div class="container">
+                    <p style="color: dark">Codigo de la ciudad: </p>
+                    <%= form.text_field :locationKey %>
+                    <% @city.errors.full_messages_for(:locationKey).each do |message| %>
+                        <div><%= message %></div>
+                    <% end %>
+                </div>
+
+                <br>
+                <div class="container">
+                    <input type="submit" name="commit" value="Editar ciudad" data-disable-with="Create City">
+                </div>
+
+            <% end %>
+        </li>
+    </ul>
+</div>
+

@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="card-header card text-center" >
+        <h1>Generado el codigo para la ciudad de <%=@nombreciudad%></h1>
+    </div>
+    <ul class="list-group" style="text-align: center">
+        <li class="list-group-item">
+            <h4 style="color: black" class="medium"><strong>Por favor, agregue el siguiente codigo a la ciudad correspondiente</strong></h4>
+            <h4 style="color: black" class="display-2"><%= @parsedcode%></h4>
+            <button onclick="location.href='/cities/'" type="button" class="btn btn-outline-success" style="width: 200px">
+            Volver a la lista
+            </button>
+        </li>
+    </ul>
+</div>

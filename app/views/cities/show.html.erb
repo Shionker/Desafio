@@ -1,0 +1,62 @@
+<div class="container">
+    <ul class="list-group" style="text-align: left">
+        <div class="card-header card text-center" >
+            <h1>Mostrando datos de <%= @city.name %></h1>
+        </div>
+
+        <% if @jsontestparsed == @error %>
+          <li class="list-group-item text-center">
+            <p>Lo sentimos, el servicio se encuentra temporalmente deshabilitado</p>
+          </li>
+        <% else %>
+        
+          <li class="list-group-item">
+            <div style="float:left">
+              <p class="mb-0">País: <%= @city.country %></p>
+              <p class="mb-0">Codigo de la ciudad: <%= @city.locationKey %></p>
+            </div>
+
+            <div  style="float:right">
+              <% if @city.locationKey == "" %>
+              <% elsif  !@city.locationKey%>
+              <% else @city.locationKey%>          
+              <button onclick="location.href='/cities/<%= @city.id %>/forecast/<%= @city.name%>/<%= @city.country%>/<%= @city.locationKey %>';" type="button" class="btn btn-outline-success" style="width: 200px">
+              Ir al pronostico
+              </button>
+              <% end %>
+              <button onclick="location.href='/cities/<%= @city.id %>/edit'" type="button" class="btn btn-outline-primary" style="width: 200px">
+              Editar
+              </button>
+              <% if @city.locationKey == "" %>
+                <button onclick="location.href='/cities/<%= @city.id %>/codigo/<%= @city.name%>/<%= @city.country%>/<%= @city.locationKey %>'" type="button" class="btn btn-outline-primary" style="width: 200px">
+                Buscar codigo ciudad
+                </button>
+              <% elsif  !@city.locationKey%>
+                <button onclick="location.href='/cities/<%= @city.id %>/codigo/<%= @city.name%>/<%= @city.country%>/<%= @city.locationKey %>'" type="button" class="btn btn-outline-primary" style="width: 200px">
+                Buscar codigo ciudad
+                </button>
+              <% else @city.locationKey%>          
+              <% end %>
+              <button type="button" class="btn btn-outline-danger" style="width: 200px" style="text-align: center">
+                <%= link_to "Eliminar", city_path(@city), data: { 
+                  turbo_method: :delete, 
+                  turbo_confirm: "¿Está seguro?" },
+                   :style => 'color: #000000' %>
+              </button>
+            </div>
+          </li>
+
+          <% if @city.locationKey == "" %>
+            <li class="list-group-item">
+              <p class="mb-0 text-center">Para acceder al pronostico del tiempo, porfavor introduzca el codigo de la ciudad otorgado en el boton "Buscar codigo ciudad"</p>
+            </li>
+          <% elsif  !@city.locationKey%>
+            <li class="list-group-item">
+              <p class="mb-0 text-center">Para acceder al pronostico del tiempo, porfavor introduzca el codigo de la ciudad otorgado en el boton "Buscar codigo ciudad"</p>
+            </li>
+          <% else @city.locationKey%>          
+          <% end %>
+
+        <% end %>
+    </ul>
+</div>
