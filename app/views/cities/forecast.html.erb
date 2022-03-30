@@ -30,6 +30,8 @@
                         <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/06-s.png" width="250px">
                       <% elsif @icon == "cloudy" %>
                         <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/07-s.png" width="250px">
+                      <% elsif @icon == "dreary" %>
+                        <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/08-s.png" width="250px">
                       <% elsif @icon == "dreary (overcast)" %>
                         <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/08-s.png" width="250px">
                       <% elsif @icon == "fog" %>
@@ -105,6 +107,8 @@
                           <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/06-s.png" width="100px">
                         <% elsif @icon1 == "cloudy" %>
                           <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/07-s.png" width="100px">
+                        <% elsif @icon1 == "dreary" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/08-s.png" width="100px">
                         <% elsif @icon1 == "dreary (overcast)" %>
                           <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/08-s.png" width="100px">
                         <% elsif @icon1 == "fog" %>
@@ -169,6 +173,8 @@
                           <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/06-s.png" width="100px">
                         <% elsif @icon2 == "cloudy" %>
                           <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/07-s.png" width="100px">
+                        <% elsif @icon2 == "dreary" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/08-s.png" width="100px">
                         <% elsif @icon2 == "dreary (overcast)" %>
                           <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/08-s.png" width="100px">
                         <% elsif @icon2 == "fog" %>
@@ -233,6 +239,8 @@
                           <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/06-s.png" width="100px">
                         <% elsif @icon3 == "cloudy" %>
                           <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/07-s.png" width="100px">
+                        <% elsif @icon3 == "dreary" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/08-s.png" width="100px">
                         <% elsif @icon3 == "dreary (overcast)" %>
                           <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/08-s.png" width="100px">
                         <% elsif @icon3 == "fog" %>
@@ -297,8 +305,10 @@
                           <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/06-s.png" width="100px">
                         <% elsif @icon4 == "cloudy" %>
                           <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/07-s.png" width="100px">
-                        <% elsif @icon4 == "dreary (overcast)" %>
+                        <% elsif @icon4 == "dreary" %>
                           <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/08-s.png" width="100px">
+                        <% elsif @icon4 == "dreary (overcast)" %>
+                          <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/08-s.png" width="100px">                      
                         <% elsif @icon4 == "fog" %>
                           <img src="http://apidev.accuweather.com/developers/Media/Default/WeatherIcons/11-s.png" width="100px">
                         <% elsif @icon4 == "showers" %>
@@ -431,17 +441,16 @@
                                         ) %></p>
                       </div>
                     </div>
-
-                    <p>Niveles de temperaturas maximas                    
-                    <%= column_chart( Dia1: @parsedvalue0max,
-                                      Dia2: @parsedvalue1max,
-                                      Dia3: @parsedvalue2max,
-                                      Dia4: @parsedvalue3max,
-                                      Dia5: @parsedvalue4max
-                                    )%></p>
-         
+                    <div>
+                      <p>Niveles de temperaturas maximas                    
+                      <%= column_chart( Dia1: @parsedvalue0max,
+                                        Dia2: @parsedvalue1max,
+                                        Dia3: @parsedvalue2max,
+                                        Dia4: @parsedvalue3max,
+                                        Dia5: @parsedvalue4max
+                                      )%></p>                  
+                    </div>
                   </div>
-
                 </div>
               </div>
             </div>
