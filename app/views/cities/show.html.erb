@@ -48,11 +48,13 @@
 
           <% if @city.locationKey == "" %>
             <li class="list-group-item">
-              <p class="mb-0 text-center">Para acceder al pronostico del tiempo, porfavor introduzca el codigo de la ciudad otorgado en el boton "Buscar codigo ciudad"</p>
+              <p class="mb-0 text-center">Para acceder al pronostico del tiempo, porfavor introduzca el codigo de la ciudad otorgado en el boton "Buscar codigo ciudad".</p>
+              <p class="mb-0 text-center">En el boton "Editar", debe introducir su codigo en el apartado correspondiente.</p>
             </li>
           <% elsif  !@city.locationKey%>
             <li class="list-group-item">
-              <p class="mb-0 text-center">Para acceder al pronostico del tiempo, porfavor introduzca el codigo de la ciudad otorgado en el boton "Buscar codigo ciudad"</p>
+              <p class="mb-0 text-center">Para acceder al pronostico del tiempo, porfavor introduzca el codigo de la ciudad otorgado en el boton "Buscar codigo ciudad".</p>
+              <p class="mb-0 text-center">En el boton "Editar", debe introducir su codigo en el apartado correspondiente.</p>
             </li>
           <% else @city.locationKey%>          
           <% end %>

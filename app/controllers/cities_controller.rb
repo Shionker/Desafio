@@ -11,7 +11,7 @@ class CitiesController < ApplicationController
     require 'net/http'
     require 'json'
   #Verificación de errores
-    @apikeyshow = "DIspTgLNnPktZgqbOEnqPai3EFmVYbXX"
+    @apikeyshow = "tPYEoYhKdlMmGYkAaoLp9pN5WDdimwlG"
     @urltest = "https://dataservice.accuweather.com/locations/v1/cities/search?apikey="+@apikeyshow+"&q=Santiago"
     @error = '{"Code"=>"ServiceUnavailable", "Message"=>"The allowed number of requests has been exceeded.", "Reference"=>"/locations/v1/cities/search?apikey='+@apikeyshow+'&q=Santiago"}'
   #Convertir url a uri
@@ -65,7 +65,7 @@ class CitiesController < ApplicationController
     @loc = (params[:locationKey])
     @forecastcityname = (params[:name])
     @forecastcitycountry = (params[:country])
-    @apikey = "DIspTgLNnPktZgqbOEnqPai3EFmVYbXX"
+    @apikey = "tPYEoYhKdlMmGYkAaoLp9pN5WDdimwlG"
     
   #Genero la url para el pronostico
     @url = "http://dataservice.accuweather.com/forecasts/v1/daily/5day/"+@loc+"?apikey="+@apikey+"&language=en-us"
@@ -247,7 +247,7 @@ class CitiesController < ApplicationController
   #Declaración de variables
     @nombreciudad = (params[:name])
     @nombrepais = (params[:country])
-    @apikeycodigo = "DIspTgLNnPktZgqbOEnqPai3EFmVYbXX"
+    @apikeycodigo = "tPYEoYhKdlMmGYkAaoLp9pN5WDdimwlG"
     @codigourl = "http://dataservice.accuweather.com/locations/v1/cities/search?apikey="+@apikeycodigo+"&q="+@nombreciudad+"%2C%20"+@nombrepais+"&language=en-us&details=false"
   #Convertir url a uri
     @uricodigo = URI(@codigourl)
