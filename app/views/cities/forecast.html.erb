@@ -415,13 +415,33 @@
               <div class="carousel-inner">
                 <div class="carousel-item active">
                   <div>
-                    <p class="small" style="color: black"> Temperatura maxima</p>
+                    <div>                  
+                      <p>Porcentajes de nubosidad</p>
+                        <li class="small">0-10: Despejado</li>
+                        <li class="small">11-25: Algunas nubes</li>
+                        <li class="small">25-50: Nubes dispersas</li>
+                        <li class="small">51-80: Parcialmente nublado</li>
+                        <li class="small">81-100: Nublado</li>
+                      <div>
+                        <%= column_chart( Día1: @cloudslvl0,
+                                          Día2: @cloudslvl1,
+                                          Día3: @cloudslvl2,
+                                          Día4: @cloudslvl3,
+                                          Día5: @cloudslvl4
+                                        ) %></p>
+                      </div>
+                    </div>
+
+                    <p>Niveles de temperaturas maximas                    
                     <%= column_chart( Dia1: @parsedvalue0max,
                                       Dia2: @parsedvalue1max,
                                       Dia3: @parsedvalue2max,
                                       Dia4: @parsedvalue3max,
-                                      Dia5: @parsedvalue4max)%>               
+                                      Dia5: @parsedvalue4max
+                                    )%></p>
+         
                   </div>
+
                 </div>
               </div>
             </div>

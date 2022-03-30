@@ -11,7 +11,7 @@ class CitiesController < ApplicationController
     require 'net/http'
     require 'json'
   #Verificación de errores
-    @apikeyshow = "fGpzVJm08tx5kopcfl55lLMkD4O5BcH9"
+    @apikeyshow = "94nr5HDRzZfnwyAmyaD9QZhWbZ6iHXMR"
     @urltest = "https://dataservice.accuweather.com/locations/v1/cities/search?apikey="+@apikeyshow+"&q=Santiago"
     @error = '{"Code"=>"ServiceUnavailable", "Message"=>"The allowed number of requests has been exceeded.", "Reference"=>"/locations/v1/cities/search?apikey='+@apikeyshow+'&q=Santiago"}'
   #Convertir url a uri
@@ -65,7 +65,7 @@ class CitiesController < ApplicationController
     @loc = (params[:locationKey])
     @forecastcityname = (params[:name])
     @forecastcitycountry = (params[:country])
-    @apikey = "fGpzVJm08tx5kopcfl55lLMkD4O5BcH9"
+    @apikey = "94nr5HDRzZfnwyAmyaD9QZhWbZ6iHXMR"
     
   #Genero la url para el pronostico
     @url = "http://dataservice.accuweather.com/forecasts/v1/daily/5day/"+@loc+"?apikey="+@apikey+"&language=en-us"
@@ -99,6 +99,35 @@ class CitiesController < ApplicationController
     @windspeedkm = @windspeed*1.60934
     @windspeedkmrounded = @windspeedkm.round(2)
     @winddeg = @wind["deg"]
+
+  #Obtengo el nivel de nubosidad del día de hoy
+    @todayclouds = @jsonp3["clouds"]
+    @cloudslvl0 = @todayclouds["all"]
+
+  #Obtengo el nivel de nubosidad de los siguientes días
+    @urlcloud = "https://api.openweathermap.org/data/2.5/forecast?lat="+@lats+"&lon="+@lons+"&appid=2fb9343bde6c7fefe15878d59c8eba2d"
+    @uri4 = URI(@urlcloud)
+    @response4 = Net::HTTP.get(@uri4)
+    @jsonpcloud = JSON.parse(@response4)
+    @coulddays = @jsonpcloud["list"]
+
+
+  #Obtengo el nivel de nubosidad del día 2
+    @cloudsbyday1 = @coulddays[4]
+    @cloudday1 = @cloudsbyday1["clouds"]
+    @cloudslvl1 = @cloudday1["all"]
+  #Obtengo el nivel de nubosidad del día 3
+    @cloudsbyday2 = @coulddays[12]
+    @cloudday2 = @cloudsbyday2["clouds"]
+    @cloudslvl2 = @cloudday2["all"]
+  #Obtengo el nivel de nubosidad del día 4
+    @cloudsbyday3 = @coulddays[20]
+    @cloudday3 = @cloudsbyday3["clouds"]
+    @cloudslvl3 = @cloudday3["all"]
+  #Obtengo el nivel de nubosidad del día 5
+    @cloudsbyday4 = @coulddays[28]
+    @cloudday4 = @cloudsbyday4["clouds"]
+    @cloudslvl4 = @cloudday4["all"]
 
 
   #Dia 1
@@ -205,6 +234,7 @@ class CitiesController < ApplicationController
 
   #Grafico de barras
     @data = [@parsedvalue0max, @parsedvalue1max, @parsedvalue2max, @parsedvalue3max, @parsedvalue4max]
+  #No se como llevar el dato almacenado en @data al column_chart
 
 
   end
@@ -217,7 +247,7 @@ class CitiesController < ApplicationController
   #Declaración de variables
     @nombreciudad = (params[:name])
     @nombrepais = (params[:country])
-    @apikeycodigo = "fGpzVJm08tx5kopcfl55lLMkD4O5BcH9"
+    @apikeycodigo = "94nr5HDRzZfnwyAmyaD9QZhWbZ6iHXMR"
     @codigourl = "http://dataservice.accuweather.com/locations/v1/cities/search?apikey="+@apikeycodigo+"&q="+@nombreciudad+"%2C%20"+@nombrepais+"&language=en-us&details=false"
   #Convertir url a uri
     @uricodigo = URI(@codigourl)
